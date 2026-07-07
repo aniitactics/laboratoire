@@ -1665,27 +1665,36 @@ main::after{
     padding-top:18px;
 }
 
-.heroCloseButton{
-    position:absolute;
-    top:14px;
-    right:14px;
+.heroCloseButton,
+.heroCloseButton button,
+.heroCloseButton span,
+.heroCloseButton::before,
+.heroCloseButton::after{
+    width:auto !important;
+    height:auto !important;
+    min-width:0 !important;
+    min-height:0 !important;
 
-    width:auto;
-    height:auto;
-    padding:0;
+    padding:0 !important;
+    margin:0 !important;
 
-    background:none !important;
+    background:transparent !important;
     border:none !important;
-
-    color:white;
-    font-size:34px;
-    line-height:1;
-
-    opacity:.7;
-    cursor:pointer;
-
     box-shadow:none !important;
-    transition:.2s;
+}
+
+.heroCloseButton{
+    position:absolute !important;
+    top:14px !important;
+    right:14px !important;
+
+    color:white !important;
+    font-size:34px !important;
+    line-height:1 !important;
+
+    opacity:.75;
+    cursor:pointer;
+    z-index:20;
 }
 
 .heroCloseButton:hover{
