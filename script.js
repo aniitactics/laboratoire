@@ -110,58 +110,31 @@ function createEffectTags(item){
 }
 
 function loadAniimosJsonp() {
-    const callbackName = "receiveAniimosData";
-
-    window[callbackName] = function(data) {
-        aniimos = data;
-
-        window.debugAniimoTags = function(name){
-            const aniimo = aniimos.find(a =>
-                a.name.toLowerCase().includes(name.toLowerCase())
-            );
-
-            if(!aniimo){
-                console.log("Aniimo introuvable :", name);
-                return;
+    fetch("donnees/aniimos.json?v=1")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Impossible de charger donnees/aniimos.json");
             }
+            return response.json();
+        })
+        .then(data => {
+            aniimos = data;
 
-            const version = aniimo.current;
+            renderSidebar();
+            applyLanguage();
 
-            const allItems = [
-                ...(version.traits || []),
-                ...(version.spells || []),
-                ...(version.ultimate ? [version.ultimate] : [])
-            ];
+            const searchInput = document.getElementById("searchInput");
+            searchInput.addEventListener("input", updateCurrentView);
+        })
+        .catch(error => {
+            console.error(error);
 
-            console.log("ANIIMO :", aniimo.name);
-            console.table(allItems.map(item => ({
-                name: item.name,
-                id: item.spell_id || item.trait_id || item.ultimate_id,
-                bonus: item.bonus,
-                malus: item.malus,
-                heal: item.heal,
-                shield: item.shield,
-                control: item.control,
-                regen_ep: item.regen_ep
-            })));
-        };
-
-        console.log(aniimos);
-        renderSidebar();
-        applyLanguage();
-
-        const searchInput = document.getElementById("searchInput");
-        searchInput.addEventListener("input", updateCurrentView);
-    };
-
-    const script = document.createElement("script");
-script.src = "https://script.google.com/macros/s/AKfycbxdPQa8q1ad-OOWomUzQApX5aTbM69athu95RggiyGOuz1RD_4wDEeCgHEaA5F80wBOsg/exec?api=aniimos&callback=" + callbackName;
-    script.onerror = function() {
-        document.getElementById("aniimoList").innerHTML =
-            "<p style='color:#ff6b6b;'>Erreur de chargement :</p><pre style='white-space:pre-wrap;color:#ffb4b4;'>Impossible de charger les données JSONP.</pre>";
-    };
-
-    document.body.appendChild(script);
+            document.getElementById("aniimoList").innerHTML =
+                "<p style='color:#ff6b6b;'>Erreur de chargement :</p>" +
+                "<pre style='white-space:pre-wrap;color:#ffb4b4;'>" +
+                error.message +
+                "</pre>";
+        });
 }
 
 loadAniimosJsonp();
