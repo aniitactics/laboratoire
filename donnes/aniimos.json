@@ -1,0 +1,20 @@
+[
+  {
+    "id": "scorchhowl",
+    "name": "Scorchhowl",
+    "portrait": "...",
+    "type": "Fire",
+    "role": "Attacker",
+    "old": {
+      ...
+    },
+    "current": {
+      ...
+    }
+  },
+  {
+    "id": "inferlupa",
+    "name": "Inferlupa",
+    ...
+  }
+]
