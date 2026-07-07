@@ -110,7 +110,7 @@ function createEffectTags(item){
 }
 
 function loadAniimosJsonp() {
-    fetch("donnees/aniimos.json?v=1")
+    fetch("donnees/aniimos.json?v=2")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Impossible de charger donnees/aniimos.json");
