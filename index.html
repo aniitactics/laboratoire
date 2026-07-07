@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <?!= include('style'); ?>
+</head>
+
+<body>
+
+<div class="topbar">
+
+<h1 id="pageTitle">Aniimo Patch Notes</h1>
+
+  <select id="languageSelect">
+    <option value="en">🇬🇧 English</option>
+    <option value="fr">🇫🇷 Français</option>
+  </select>
+
+</div>
+<div class="viewSwitch">
+<button id="patchViewButton" class="active" onclick="switchView('patch')">
+    Patch Notes
+</button>
+
+<button id="aniilogViewButton" onclick="switchView('aniilog')">
+    Aniilog
+</button>
+</div>
+<main>
+
+    <aside id="sidebar">
+
+    <div class="searchBox">
+        <input id="searchInput" type="text" placeholder="Search Aniimo...">
+    </div>
+
+    <div id="aniimoList">
+        Loading...
+    </div>
+
+</aside>
+
+<section id="content">
+    <span id="defaultMessage">Select an Aniimo.</span>
+</section>
+
+</main>
+<?!= include('typeIcons'); ?>
+<?!= include('roleIcons'); ?>
+<?!= include('lang'); ?>
+<?!= include('script'); ?>
+<div id="aniilogModal" class="aniilogModal hidden">
+
+    <div class="aniilogOverlay"></div>
+
+    <div class="aniilogModalContent">
+    </div>
+
+</div>
+</body>
+
+</html>
