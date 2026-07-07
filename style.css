@@ -1665,30 +1665,32 @@ main::after{
     padding-top:18px;
 }
 
-.heroCloseButton{
-    position:absolute;
-    top:-18px;
-    right:-18px;
-    width:46px;
-    height:46px;
-    border:1px solid rgba(255,255,255,.22);
-    border-radius:50%;
-    background:rgba(15,23,42,.82);
-    color:#e5e7eb;
-    font-size:21px;
-    font-weight:800;
-    cursor:pointer;
-    z-index:30;
-    backdrop-filter:blur(10px);
-    box-shadow:0 8px 22px rgba(0,0,0,.42);
-    transition:background .2s, transform .2s, color .2s, border-color .2s;
+.closeButton {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+
+    background: rgba(180, 55, 55, .95);
+    border: 2px solid rgba(255,255,255,.55);
+
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 42px;
+    text-align: center;
+
+    box-shadow:
+        0 0 14px rgba(0,0,0,.55),
+        0 0 12px rgba(220,80,80,.45);
+
+    cursor: pointer;
+    transition: .18s ease;
+    z-index: 50;
 }
 
-.heroCloseButton:hover{
-    background:rgba(239,68,68,.28);
-    border-color:rgba(248,113,113,.65);
-    color:#fff;
-    transform:scale(1.08);
+.closeButton:hover {
+    background: #e05b5b;
+    transform: scale(1.12);
 }
 
 .heroCloseButton:active{
