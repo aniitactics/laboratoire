@@ -31,6 +31,22 @@ main{
     height:calc(100vh - 276px);
 }
 
+.heroLogo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.heroLogo img{
+    height:80px;
+    width:auto;
+    max-width:90vw;
+
+    filter:drop-shadow(0 0 12px rgba(0,0,0,.45));
+    user-select:none;
+    pointer-events:none;
+}
+
 #sidebar{
     width:300px;
     overflow-y:auto;
