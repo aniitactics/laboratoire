@@ -1338,6 +1338,10 @@ main::after{
     border:1px solid rgba(167,139,250,.65);
 }
 
+.aniilogFiltersPanel.animating{
+    overflow:hidden;
+}
+
 .aniilogFiltersPanel .aniilogFilters{
     margin:0;
     border:0;
