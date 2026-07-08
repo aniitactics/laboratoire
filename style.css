@@ -1847,3 +1847,86 @@ body{
     height:100%;
     overflow:hidden;
 }
+
+#sidebarToggle,
+#sidebarOverlay{
+    display:none;
+}
+
+@media (max-width:768px){
+
+    .topbar{
+        min-height:125px;
+        padding:12px 14px 34px;
+    }
+
+    .topbar .heroLogo img{
+        width:240px;
+        max-width:72vw;
+    }
+
+    .viewSwitch{
+        margin-top:-30px;
+        padding-left:8px;
+    }
+
+    main{
+        display:block;
+    }
+
+    #content{
+        width:100%;
+        padding:14px;
+    }
+
+    #sidebar{
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+
+        width:82vw;
+        max-width:340px;
+
+        transform:translateX(-100%);
+        transition:.25s ease;
+
+        z-index:1001;
+        box-shadow:12px 0 30px rgba(0,0,0,.45);
+    }
+
+    body.sidebarOpen #sidebar{
+        transform:translateX(0);
+    }
+
+    #sidebarToggle{
+        display:block;
+        position:fixed;
+        left:12px;
+        bottom:16px;
+
+        z-index:1002;
+
+        border:1px solid rgba(255,255,255,.25);
+        border-radius:999px;
+        padding:10px 14px;
+
+        background:rgba(15,23,42,.88);
+        color:white;
+        font-weight:700;
+        cursor:pointer;
+
+        backdrop-filter:blur(8px);
+    }
+
+    #sidebarOverlay{
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.45);
+        z-index:1000;
+    }
+
+    body.sidebarOpen #sidebarOverlay{
+        display:block;
+    }
+}
