@@ -4,6 +4,10 @@
 
 body{
     margin:0;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
     color:white;
     font-family:Arial, sans-serif;
 
@@ -28,7 +32,8 @@ body::before{
 
 main{
     display:flex;
-    height:calc(100vh - 234px);
+    flex:1;
+    min-height:0;
 }
 
 .heroLogo{
@@ -1805,4 +1810,10 @@ main::after{
     filter:
         drop-shadow(0 12px 14px rgba(0,0,0,.55))
         drop-shadow(0 0 18px rgba(255,255,255,.18));
+}
+
+html,
+body{
+    height:100%;
+    overflow:hidden;
 }
