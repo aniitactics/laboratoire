@@ -1,6 +1,6 @@
 const LANG = {
   en: {
-    title: "Aniimo Patch Notes",
+    title: "Aniitactics",
     searchPlaceholder: "Search Aniimo...",
     selectAniimo: "Select an Aniimo.",
     hoverIconDetails: "Move your mouse over an icon to show its details.",
@@ -77,7 +77,7 @@ const LANG = {
   },
 
   fr: {
-    title: "Aniimo Notes de Patch",
+    title: "Aniitactics",
     searchPlaceholder: "Chercher un Aniimo...",
     selectAniimo: "Sélectionnez un Aniimo.",
     hoverIconDetails: "Survolez une icône pour afficher ses détails.",
