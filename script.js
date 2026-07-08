@@ -440,51 +440,50 @@ function createEntitySection(title, oldItems, newItems, idKey){
         const newItem = newById[id];
 
         if(!newItem){
-blocks.push(createEntityCard(
-    "removed",
-    oldItem,
-    getLocalizedDescription(oldItem)
-    ? `<p class="removedDescription">${formatText(getLocalizedDescription(oldItem))}</p>`
-    : ""
-    "oldBlock"
-));
-} else if(hasEntityChanged(oldItem, newItem)){
-    blocks.push(createEntityCard(
-    "modified",
-    newItem,
-    createChangeList(oldItem, newItem) + createDescriptionCompare(oldItem, newItem),
-    "modifiedBlock"
-));
-}
-        
+            blocks.push(createEntityCard(
+                "removed",
+                oldItem,
+                getLocalizedDescription(oldItem)
+                    ? `<p class="removedDescription">${formatText(getLocalizedDescription(oldItem))}</p>`
+                    : "",
+                "oldBlock"
+            ));
+        } else if(hasEntityChanged(oldItem, newItem)){
+            blocks.push(createEntityCard(
+                "modified",
+                newItem,
+                createChangeList(oldItem, newItem) + createDescriptionCompare(oldItem, newItem),
+                "modifiedBlock"
+            ));
+        }
     });
 
     newItems.forEach(newItem => {
         const id = newItem[idKey];
 
         if(!oldById[id]){
-blocks.push(createEntityCard(
-    "new",
-    newItem,
-    getLocalizedDescription(newItem)
-    ? `<p>${formatText(getLocalizedDescription(newItem))}</p>`
-    : ""
-    "newBlock"
-));
-}
+            blocks.push(createEntityCard(
+                "new",
+                newItem,
+                getLocalizedDescription(newItem)
+                    ? `<p>${formatText(getLocalizedDescription(newItem))}</p>`
+                    : "",
+                "newBlock"
+            ));
+        }
     });
 
     if(blocks.length === 0) return "";
 
     return `
-    <section class="infoCard entitySection">
-        <h3>${t(title)}</h3>
+        <section class="infoCard entitySection">
+            <h3>${t(title)}</h3>
 
-        <div class="entityGrid">
-            ${blocks.join("")}
-        </div>
-    </section>
-`;
+            <div class="entityGrid">
+                ${blocks.join("")}
+            </div>
+        </section>
+    `;
 }
 
 function indexById(items, idKey){
