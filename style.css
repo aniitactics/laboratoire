@@ -32,26 +32,23 @@ main{
 }
 
 .heroLogo{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    margin-top:-8px;
-    margin-bottom:12px;
+   position:absolute;
+    top:34px;
+    left:50%;
+    transform:translateX(-35%);
+    width:auto;
+    margin:0;
+    z-index:3;
 }
 
 .heroLogo img{
-    height:150px;
-    width:auto;
-    max-width:65vw;
+        width:520px;
+    height:auto;
+    max-width:none;
 
     filter:
-        drop-shadow(0 8px 12px rgba(0,0,0,.45))
-        drop-shadow(0 0 18px rgba(255,255,255,.16));
-
-    user-select:none;
-    pointer-events:none;
+        drop-shadow(0 8px 10px rgba(0,0,0,.55))
+        drop-shadow(0 0 14px rgba(255,255,255,.18));
 }
 
 #sidebar{
