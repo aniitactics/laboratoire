@@ -1174,6 +1174,7 @@ ${createAniilogFilters()}
             showAniilogAniimoById(this.dataset.aniimoId);
         });
     });
+    setupAnimatedDetailsPanels();
 }
             
 function toggleAniilogFilter(group, value){
