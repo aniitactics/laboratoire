@@ -32,17 +32,24 @@ main{
 }
 
 .heroLogo{
+    width:100%;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
+    margin-top:-8px;
+    margin-bottom:12px;
 }
 
 .heroLogo img{
-    height:80px;
+    height:150px;
     width:auto;
-    max-width:90vw;
+    max-width:65vw;
 
-    filter:drop-shadow(0 0 12px rgba(0,0,0,.45));
+    filter:
+        drop-shadow(0 8px 12px rgba(0,0,0,.45))
+        drop-shadow(0 0 18px rgba(255,255,255,.16));
+
     user-select:none;
     pointer-events:none;
 }
@@ -1252,13 +1259,13 @@ main{
     z-index:2;
     overflow:hidden;
 
-    min-height:262px;
-    padding:42px 25px 84px;
+    min-height:300px;
+    padding:34px 25px 86px;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:flex-start;
+    align-items:center;
     gap:18px;
 
     background:
