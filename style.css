@@ -1320,6 +1320,7 @@ main::after{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    transition:.2s ease;
 }
 
 .aniilogFiltersPanel summary::-webkit-details-marker{
@@ -1337,13 +1338,38 @@ main::after{
     border:1px solid rgba(167,139,250,.65);
 }
 
-.aniilogFilters{
+.aniilogFiltersPanel .aniilogFilters{
     margin:0;
     border:0;
     border-top:1px solid rgba(255,255,255,.10);
     border-radius:0;
     background:transparent;
+
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+
+    padding-top:0;
+    padding-bottom:0;
+
+    transition:
+        max-height .28s ease,
+        opacity .2s ease,
+        padding .28s ease;
 }
+
+.aniilogFiltersPanel[open] .aniilogFilters{
+    max-height:900px;
+    opacity:1;
+
+    padding-top:16px;
+    padding-bottom:16px;
+}
+
+.aniilogFiltersPanel[open] summary{
+    background:rgba(255,255,255,.035);
+}
+
 
 .aniilogHero{
     display:flex;
