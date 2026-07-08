@@ -33,22 +33,22 @@ main{
 
 .heroLogo{
     position:absolute;
-    top:42px;
-    left:50%;
-    transform:translateX(-50%);
+     left:50%;
+    top:50%;
+    transform:translate(-50%,-45%);
     width:auto;
     margin:0;
-    z-index:3;
+    z-index:5;
 }
 
 .heroLogo img{
-    width:470px;
+    width:430px;
     height:auto;
-    max-width:55vw;
+    max-width:40vw;
 
     filter:
-        drop-shadow(0 8px 10px rgba(0,0,0,.55))
-        drop-shadow(0 0 14px rgba(255,255,255,.18));
+        drop-shadow(0 12px 14px rgba(0,0,0,.55))
+        drop-shadow(0 0 18px rgba(255,255,255,.18));
 }
 
 #sidebar{
@@ -1052,6 +1052,9 @@ main{
 
 #languageSelect{
     background-color:#111827;
+    position:absolute;
+    left:26px;
+    top:26px;
 }
 .effectTags{
     display:flex;
@@ -1114,8 +1117,9 @@ main{
     gap:8px;
     align-items:center;
 
-    margin-top:-48px;
+    margin-top:-34px;
     padding:0 0 12px;
+    padding-bottom:8px;
     background:transparent;
     border-bottom:1px solid rgba(255,255,255,.12);
 
@@ -1256,8 +1260,8 @@ main{
     z-index:2;
     overflow:hidden;
 
-    min-height:220px;
-    padding:26px 25px 68px;
+    min-height:170px;
+padding:18px 25px 42px;
 
     display:flex;
     flex-direction:column;
@@ -1270,7 +1274,7 @@ main{
         url("https://drive.google.com/thumbnail?id=1Iw_8spc_5hsAVtveJaHa4sZqRWjgNpF9&sz=w1600");
 
     background-size:cover;
-    background-position:center 42%;
+    background-position:center 18%;
     border-bottom:1px solid rgba(255,255,255,.12);
     box-shadow:0 8px 30px rgba(0,0,0,.25);
 }
