@@ -1600,3 +1600,11 @@ window.changeForm = changeForm;
 window.toggleAniilogFilter = toggleAniilogFilter;
 window.resetAniilogFilters = resetAniilogFilters;
 window.showAniilogAniimoById = showAniilogAniimoById;
+
+function toggleSidebar(){
+    document.body.classList.toggle("sidebarOpen");
+}
+
+function closeSidebar(){
+    document.body.classList.remove("sidebarOpen");
+}
