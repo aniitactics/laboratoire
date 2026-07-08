@@ -443,9 +443,9 @@ function createEntitySection(title, oldItems, newItems, idKey){
 blocks.push(createEntityCard(
     "removed",
     oldItem,
-    oldItem.effect_key
-        ? `<p class="removedDescription">${formatText(oldItem.effect_key)}</p>`
-        : "",
+    getLocalizedDescription(oldItem)
+    ? `<p class="removedDescription">${formatText(getLocalizedDescription(oldItem))}</p>`
+    : ""
     "oldBlock"
 ));
 } else if(hasEntityChanged(oldItem, newItem)){
@@ -466,9 +466,9 @@ blocks.push(createEntityCard(
 blocks.push(createEntityCard(
     "new",
     newItem,
-    newItem.effect_key
-        ? `<p>${formatText(newItem.effect_key)}</p>`
-        : "",
+    getLocalizedDescription(newItem)
+    ? `<p>${formatText(getLocalizedDescription(newItem))}</p>`
+    : ""
     "newBlock"
 ));
 }
