@@ -1528,6 +1528,71 @@ document.addEventListener("keydown", function(e){
 
 });
 
+function setupAnimatedDetailsPanels() {
+    document.querySelectorAll(".aniilogFiltersPanel").forEach(panel => {
+        const summary = panel.querySelector("summary");
+        const content = panel.querySelector(".aniilogFilters");
+
+        if (!summary || !content) return;
+
+        summary.addEventListener("click", event => {
+            event.preventDefault();
+
+            const isOpen = panel.hasAttribute("open");
+
+            panel.classList.add("animating");
+
+            if (isOpen) {
+                const startHeight = content.scrollHeight;
+
+                content.style.maxHeight = startHeight + "px";
+
+                requestAnimationFrame(() => {
+                    content.style.maxHeight = "0px";
+                    content.style.opacity = "0";
+                    content.style.paddingTop = "0px";
+                    content.style.paddingBottom = "0px";
+                });
+
+                setTimeout(() => {
+                    panel.removeAttribute("open");
+                    panel.classList.remove("animating");
+                    content.style.maxHeight = "";
+                    content.style.opacity = "";
+                    content.style.paddingTop = "";
+                    content.style.paddingBottom = "";
+                }, 280);
+            } else {
+                panel.setAttribute("open", "");
+
+                const targetHeight = content.scrollHeight;
+
+                content.style.maxHeight = "0px";
+                content.style.opacity = "0";
+                content.style.paddingTop = "0px";
+                content.style.paddingBottom = "0px";
+
+                requestAnimationFrame(() => {
+                    content.style.maxHeight = targetHeight + "px";
+                    content.style.opacity = "1";
+                    content.style.paddingTop = "16px";
+                    content.style.paddingBottom = "16px";
+                });
+
+                setTimeout(() => {
+                    panel.classList.remove("animating");
+                    content.style.maxHeight = "";
+                    content.style.opacity = "";
+                    content.style.paddingTop = "";
+                    content.style.paddingBottom = "";
+                }, 280);
+            }
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", setupAnimatedDetailsPanels);
+
 window.showAniimo = showAniimo;
 window.switchView = switchView;
 window.changeForm = changeForm;
