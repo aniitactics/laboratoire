@@ -28,23 +28,23 @@ body::before{
 
 main{
     display:flex;
-    height:calc(100vh - 276px);
+    height:calc(100vh - 234px);
 }
 
 .heroLogo{
-   position:absolute;
-    top:34px;
+    position:absolute;
+    top:42px;
     left:50%;
-    transform:translateX(-70%);
+    transform:translateX(-50%);
     width:auto;
     margin:0;
     z-index:3;
 }
 
 .heroLogo img{
-        width:520px;
+    width:470px;
     height:auto;
-    max-width:none;
+    max-width:55vw;
 
     filter:
         drop-shadow(0 8px 10px rgba(0,0,0,.55))
@@ -1114,8 +1114,8 @@ main{
     gap:8px;
     align-items:center;
 
-    margin-top:-52px;
-    padding:0 0 14px;
+    margin-top:-48px;
+    padding:0 0 12px;
     background:transparent;
     border-bottom:1px solid rgba(255,255,255,.12);
 
@@ -1256,8 +1256,8 @@ main{
     z-index:2;
     overflow:hidden;
 
-    min-height:300px;
-    padding:34px 25px 86px;
+    min-height:220px;
+    padding:26px 25px 68px;
 
     display:flex;
     flex-direction:column;
@@ -1270,7 +1270,7 @@ main{
         url("https://drive.google.com/thumbnail?id=1Iw_8spc_5hsAVtveJaHa4sZqRWjgNpF9&sz=w1600");
 
     background-size:cover;
-    background-position:center 55%;
+    background-position:center 42%;
     border-bottom:1px solid rgba(255,255,255,.12);
     box-shadow:0 8px 30px rgba(0,0,0,.25);
 }
