@@ -899,7 +899,11 @@ function formatText(text){
 }
 
 function applyLanguage(){
-    document.getElementById("pageTitle").textContent = LANG[currentLang].title;
+    const pageTitle = document.getElementById("pageTitle");
+
+if (pageTitle) {
+    pageTitle.textContent = t.pageTitle;
+}
     document.getElementById("searchInput").placeholder = LANG[currentLang].searchPlaceholder;
 
     const defaultMessage = document.getElementById("defaultMessage");
