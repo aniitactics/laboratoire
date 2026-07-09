@@ -26141,7 +26141,24 @@
           "regen_ep": "20"
         }
       ],
-      "ultimate": null,
+      "ultimate": {
+        "version_id": "cb3",
+        "ultimate_id": "heliosjudgment",
+        "name": "Helios' Judgment",
+        "icon": "https://drive.google.com/thumbnail?id=1HRyMGGWa4AnQrJ-ufXjpg1h-H8E3lJ8y&sz=w400",
+        "type": "light",
+        "power": 167,
+        "effect_key": "Unleashes Helios' Judgment on nearby targets, dealing massive damage. Evolves into Soleon, increases its own damage by 15% until leaving combat, and gains Ring of the Golden  Sun.",
+        "effect_key_fr": "Déchaîne le Jugement d'Hélios sur les cibles proches, infligeant des dégâts massifs. Évolue en Soleon, augmentant ses propres dégâts de 15% jusqu'à quitter le combat, et gagne [Anneau du Soleil d'Or].",
+        "spectre": "physical",
+        "duration": "",
+        "bonus": "15%",
+        "malus": "",
+        "heal": "",
+        "shield": "",
+        "control": "",
+        "regen_ep": ""
+      },
       "forms": [],
       "prismanas": []
     }
