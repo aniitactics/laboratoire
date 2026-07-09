@@ -25939,7 +25939,7 @@
     "old": {
       "version_id": "cb2",
       "aniimo_id": "helion",
-      "name": "helion",
+      "name": "Helion",
       "portrait": "https://drive.google.com/thumbnail?id=1xwffyDzbBFTyhg0r5NQl0GkrLxhVpnAv&sz=w400",
       "type": "light",
       "role": "DPS",
@@ -26013,7 +26013,24 @@
           "regen_ep": ""
         }
       ],
-      "ultimate": null,
+      "ultimate": {
+        "version_id": "cb2",
+        "ultimate_id": "-",
+        "name": "",
+        "icon": "",
+        "type": "",
+        "power": "",
+        "effect_key": "",
+        "effect_key_fr": "",
+        "spectre": "",
+        "duration": "",
+        "bonus": "",
+        "malus": "",
+        "heal": "",
+        "shield": "",
+        "control": "",
+        "regen_ep": ""
+      },
       "forms": [],
       "prismanas": []
     },
@@ -26109,7 +26126,24 @@
           "regen_ep": ""
         }
       ],
-      "ultimate": null,
+      "ultimate": {
+        "version_id": "cb3",
+        "ultimate_id": "-",
+        "name": "",
+        "icon": "",
+        "type": "",
+        "power": "",
+        "effect_key": "",
+        "effect_key_fr": "",
+        "spectre": "",
+        "duration": "",
+        "bonus": "",
+        "malus": "",
+        "heal": "",
+        "shield": "",
+        "control": "",
+        "regen_ep": ""
+      },
       "forms": [],
       "prismanas": []
     }
