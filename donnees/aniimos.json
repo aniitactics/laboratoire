@@ -25865,7 +25865,22 @@
       "pdef": 60,
       "regen": 68,
       "bst": 396,
-      "traits": [],
+      "traits": [
+        {
+          "version_id": "cb3",
+          "trait_id": "lunarpower2",
+          "icon": "https://drive.google.com/thumbnail?id=1XN-6eGVpPTYtSYk7_VC1OIutBRBHXbVF&sz=w400",
+          "name": "Lunar Power",
+          "effect_key": "When not attacking with an advantageous element, final damage increased by 20%. Casting a skill or Ultimate grants 4 stacks of [Silver Moon Mark]. Eache basic attack hit consumes 1 stack, deals 100% extra damage, and restores 0,5% HP. ",
+          "effect_key_fr": "Quand Lunara n'attaque pas un ennemi avec un avantage élémentaire, les dégâts sont augmentés de 20%. Lancer un sort ou un ultime octroie 4 stacks de [Marque de la Lune Argentée]. Chaque attaque de base consomme un stack, infligeant 100% de dégâts supplémentaires et restaurant 0,5% des PV.",
+          "bonus": "",
+          "malus": "",
+          "heal": "",
+          "shield": "",
+          "control": "",
+          "regen_ep": ""
+        }
+      ],
       "spells": [
         {
           "version_id": "cb3",
