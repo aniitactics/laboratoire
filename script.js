@@ -844,6 +844,7 @@ function showLoadoutDetails(html){
     if(!box) return;
 
     box.innerHTML = html;
+    box.scrollTop = 0;
     box.classList.add("isVisible");
 }
 
