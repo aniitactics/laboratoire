@@ -1023,7 +1023,7 @@ main{
 .loadoutDetails{
     position:absolute;
     top:20px;
-    right:20px;
+    right:62px;
 
     width:330px;
     max-height:calc(100% - 40px);
@@ -1773,7 +1773,10 @@ main::after{
     position:relative;
     width:min(1100px,95vw);
     max-height:90vh;
-    overflow:auto;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
     z-index:1;
     padding-top:18px;
 }
@@ -1797,29 +1800,44 @@ main::after{
 }
 
 .heroCloseButton{
-    position:absolute;
+    position:absolute !important;
+    top:14px !important;
+    right:14px !important;
 
-    top:-14px;
-    right:-14px;
+    width:38px !important;
+    height:38px !important;
 
-    width:38px;
-    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    border-radius:50%;
+    border-radius:50% !important;
 
-    z-index:100;
-    background:#ef4444;
-    color:white;
+    color:white !important;
+    font-size:24px !important;
+    line-height:1 !important;
 
-    box-shadow:0 6px 18px rgba(239,68,68,.35);
+    background:rgba(15,23,42,.92) !important;
+    border:1px solid rgba(255,255,255,.28) !important;
 
-    transition:.18s;
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.35),
+        0 0 12px rgba(255,255,255,.08) !important;
+
+    opacity:.9;
+    cursor:pointer;
+    z-index:50;
+
+    transition:
+        transform .18s ease,
+        opacity .18s ease,
+        border-color .18s ease;
 }
 
 .heroCloseButton:hover{
     opacity:1;
-    transform:scale(1.12) rotate(90deg);
-    text-shadow:0 0 8px rgba(255,255,255,.8);
+    transform:rotate(90deg) scale(1.08);
+    border-color:rgba(255,255,255,.65) !important;
 }
 
 .heroCloseButton:active{
@@ -2026,6 +2044,7 @@ body{
     .aniilogModalContent{
         width:100%;
         max-height:calc(100vh - 24px);
+        overflow-x:hidden;
         overflow-y:auto;
         -webkit-overflow-scrolling:touch;
     }
@@ -2093,18 +2112,29 @@ body{
         grid-template-columns:1fr 1fr;
     }
     
-    .loadoutDetails{
-    position:static;
+        .loadoutDetails{
+        position:static;
 
-    width:100%;
-    max-height:none;
-    overflow:visible;
+        width:100%;
+        max-height:none;
+        overflow:visible;
 
-    opacity:1;
-    visibility:visible;
-    transform:none;
+        opacity:1;
+        visibility:visible;
+        transform:none;
 
-    transition:none;
+        transition:none;
+    }
+
+    .heroCloseButton{
+        top:8px !important;
+        right:8px !important;
+
+        width:34px !important;
+        height:34px !important;
+
+        font-size:20px !important;
+    }
 }
 }
 
