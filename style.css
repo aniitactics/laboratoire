@@ -919,6 +919,31 @@ main{
     color:#d1d5db;
     font-size:.95rem;
 }
+
+.descriptionText,
+.tooltipUpgradeText{
+    white-space:pre-line;
+}
+.tooltipUpgrade{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid rgba(255,255,255,.14);
+}
+
+.tooltipUpgradeTitle{
+    margin-bottom:6px;
+
+    font-family:"Outfit", sans-serif;
+    font-weight:700;
+
+    color:#facc15;
+}
+
+.tooltipUpgradeText{
+    line-height:1.5;
+    color:rgba(255,255,255,.88);
+}
+
 .removedDescription{
     color:#a5adb8;
     opacity:.78;
