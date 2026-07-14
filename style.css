@@ -2086,5 +2086,19 @@ body{
     .statsGrid{
         grid-template-columns:1fr 1fr;
     }
+    
+    .loadoutDetails{
+    position:static;
+
+    width:100%;
+    max-height:none;
+    overflow:visible;
+
+    opacity:1;
+    visibility:visible;
+    transform:none;
+
+    transition:none;
+}
 }
 
