@@ -69,7 +69,9 @@ const ENTITY_COMPARE_FIELDS = [
     "heal",
     "shield",
     "control",
-    "regen_ep"
+    "regen_ep",
+    "upgrade",
+    "upgrade_fr"
 ];
 const FIELD_BEHAVIOR = {
     power: "higher",
