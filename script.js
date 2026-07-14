@@ -289,14 +289,32 @@ function createAniilogEntitySection(title, items){
         <h3>${t(title)}</h3>
 
         <div class="entityGrid">
-            ${items.map(item =>
-                createInfoCard(
-                    displayName(item),
-                    createEffectTags(item) +
-                    createAniilogEntityMeta(item) +
-                    (getLocalizedDescription(item)
-                        ? `<p>${formatText(getLocalizedDescription(item))}</p>`
-                        : ""),
+            items.map(item => {
+
+    const upgrade = getLocalizedUpgrade(item);
+
+    return createInfoCard(
+        displayName(item),
+        createEffectTags(item) +
+        createAniilogEntityMeta(item) +
+        (getLocalizedDescription(item)
+            ? `<p>${formatText(getLocalizedDescription(item))}</p>`
+            : "") +
+
+        (upgrade
+            ? `
+                <div class="tooltipUpgrade">
+                    <strong>${t("upgrade")} :</strong>
+                    <p>${formatText(upgrade)}</p>
+                </div>
+              `
+            : ""),
+
+        item.icon,
+        item.type
+    );
+
+})
                     item.icon,
                     item.type
                 )
@@ -785,6 +803,9 @@ function createTooltipIcon(category, item){
 }
 
 function createLoadoutDetails(category, item){
+
+    const upgrade = getLocalizedUpgrade(item);
+
     return `
         <div class="tooltipTitle">${displayName(item)}</div>
         <div class="tooltipCategory">${t(category)}</div>
@@ -798,6 +819,15 @@ function createLoadoutDetails(category, item){
         ${item.duration ? `<div><strong>${t("duration")}:</strong> ${item.duration}</div>` : ""}
         ${getLocalizedDescription(item)
     ? `<p>${formatText(getLocalizedDescription(item))}</p>`
+    : ""}
+
+${upgrade
+    ? `
+        <div class="tooltipUpgrade">
+            <strong>${t("upgrade")} :</strong>
+            <p>${formatText(upgrade)}</p>
+        </div>
+      `
     : ""}
     `;
 }
@@ -1098,29 +1128,106 @@ function cleanDisplay(value){
 
     return text;
 }
+
 function createDescriptionCompare(oldItem, newItem){
 
-    const oldText = cleanDisplay(getLocalizedDescription(oldItem));
-const newText = cleanDisplay(getLocalizedDescription(newItem));
+    const oldDescription = cleanDisplay(
+        getLocalizedDescription(oldItem)
+    );
 
-    if(oldText === newText){
+    const newDescription = cleanDisplay(
+        getLocalizedDescription(newItem)
+    );
+
+    const oldUpgrade = cleanDisplay(
+        getLocalizedUpgrade(oldItem)
+    );
+
+    const newUpgrade = cleanDisplay(
+        getLocalizedUpgrade(newItem)
+    );
+
+    const descriptionChanged =
+        oldDescription !== newDescription;
+
+    const upgradeChanged =
+        oldUpgrade !== newUpgrade;
+
+    if(!descriptionChanged && !upgradeChanged){
         return "";
     }
 
     return `
         <div class="descriptionCompare">
+
             <div class="descriptionCard oldDescription">
                 <h5>${t("before")}</h5>
-                <p>${formatText(oldText || "—")}</p>
+
+                ${oldDescription
+                    ? `
+                        <div class="descriptionText">
+                            ${formatText(oldDescription)}
+                        </div>
+                      `
+                    : `
+                        <div class="descriptionText emptyDescription">
+                            —
+                        </div>
+                      `
+                }
+
+                ${oldUpgrade
+                    ? `
+                        <div class="tooltipUpgrade">
+                            <div class="tooltipUpgradeTitle">
+                                ${t("upgrade")} :
+                            </div>
+
+                            <div class="tooltipUpgradeText">
+                                ${formatText(oldUpgrade)}
+                            </div>
+                        </div>
+                      `
+                    : ""
+                }
             </div>
 
             <div class="descriptionCard newDescription">
                 <h5>${t("after")}</h5>
-                <p>${formatText(newText || "—")}</p>
+
+                ${newDescription
+                    ? `
+                        <div class="descriptionText">
+                            ${formatText(newDescription)}
+                        </div>
+                      `
+                    : `
+                        <div class="descriptionText emptyDescription">
+                            —
+                        </div>
+                      `
+                }
+
+                ${newUpgrade
+                    ? `
+                        <div class="tooltipUpgrade">
+                            <div class="tooltipUpgradeTitle">
+                                ${t("upgrade")} :
+                            </div>
+
+                            <div class="tooltipUpgradeText">
+                                ${formatText(newUpgrade)}
+                            </div>
+                        </div>
+                      `
+                    : ""
+                }
             </div>
+
         </div>
     `;
 }
+
 function switchView(view){
     currentView = view;
 
