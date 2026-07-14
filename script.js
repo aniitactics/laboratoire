@@ -37,6 +37,16 @@ function getLocalizedDescription(item){
     return item.effect_key || "";
 }
 
+function getLocalizedUpgrade(item) {
+  if (!item) return "";
+
+  if (currentLang === "fr") {
+    return item.upgrade_fr || item.upgrade || "";
+  }
+
+  return item.upgrade || "";
+}
+
 function entityLabel(key, count){
     const singularKey = key + "Singular";
 
