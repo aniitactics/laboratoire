@@ -842,19 +842,26 @@ ${upgrade
 function showLoadoutDetails(html){
     const box = document.getElementById("loadoutDetails");
     if(!box) return;
+
     box.innerHTML = html;
+    box.classList.add("isVisible");
 }
 
 function clearLoadoutDetails(){
     const box = document.getElementById("loadoutDetails");
     if(!box) return;
 
-box.innerHTML = `
-    <div class="loadoutDetailsEmpty">
-        ${t("hoverIconDetails")}
-    </div>
-`;
+    box.classList.remove("isVisible");
 
+    setTimeout(() => {
+        if(!box.classList.contains("isVisible")){
+            box.innerHTML = `
+                <div class="loadoutDetailsEmpty">
+                    ${t("hoverIconDetails")}
+                </div>
+            `;
+        }
+    }, 180);
 }
 
 
