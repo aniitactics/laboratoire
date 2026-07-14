@@ -329,14 +329,6 @@ function createAniilogEntitySection(title, items){
             </div>
         </section>
     `;
-})
-                    item.icon,
-                    item.type
-                )
-            ).join("")}
-        </div>
-    </section>
-`;
 }
 
 function showAniimo(name){
