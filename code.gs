@@ -233,6 +233,9 @@ function readSheetAsObjects_(ss, sheetName) {
     obj[header] = row[i];
   });
 
+obj.upgrade = obj.upgrade || "";
+obj.upgrade_fr = obj.upgrade_fr || "";
+
   if (obj.icon) {
   obj.icon = getDriveImageUrl(obj.icon);
 }
