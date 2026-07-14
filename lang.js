@@ -54,6 +54,7 @@ const LANG = {
     shield: "Shield",
     control: "Control",
     regenEp: "EP regeneration",
+    upgrade: "Upgrade",
 
     removed: "Removed",
     modified: "Modified",
@@ -131,6 +132,7 @@ heal: "Soin",
     shield: "Bouclier",
     control: "Contrôle",
     regenEp: "Régénération d’EP",
+    upgrade: "Amélioration",
 
     removed: "Retiré",
     modified: "Modifié",
