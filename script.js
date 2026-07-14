@@ -286,36 +286,49 @@ function createSingleStat(label, value){
 function createAniilogEntitySection(title, items){
     if(!items || items.length === 0) return "";
 
+    const cards = items.map(item => {
+        const description = getLocalizedDescription(item);
+        const upgrade = getLocalizedUpgrade(item);
+
+        const content =
+            createEffectTags(item) +
+            createAniilogEntityMeta(item) +
+
+            (description
+                ? `<p>${formatText(description)}</p>`
+                : "") +
+
+            (upgrade
+                ? `
+                    <div class="tooltipUpgrade">
+                        <div class="tooltipUpgradeTitle">
+                            ${t("upgrade")} :
+                        </div>
+
+                        <div class="tooltipUpgradeText">
+                            ${formatText(upgrade)}
+                        </div>
+                    </div>
+                  `
+                : "");
+
+        return createInfoCard(
+            displayName(item),
+            content,
+            item.icon,
+            item.type
+        );
+    }).join("");
+
     return `
-    <section class="infoCard entitySection">
-        <h3>${t(title)}</h3>
+        <section class="infoCard entitySection">
+            <h3>${t(title)}</h3>
 
-        <div class="entityGrid">
-            items.map(item => {
-
-    const upgrade = getLocalizedUpgrade(item);
-
-    return createInfoCard(
-        displayName(item),
-        createEffectTags(item) +
-        createAniilogEntityMeta(item) +
-        (getLocalizedDescription(item)
-            ? `<p>${formatText(getLocalizedDescription(item))}</p>`
-            : "") +
-
-        (upgrade
-            ? `
-                <div class="tooltipUpgrade">
-                    <strong>${t("upgrade")} :</strong>
-                    <p>${formatText(upgrade)}</p>
-                </div>
-              `
-            : ""),
-
-        item.icon,
-        item.type
-    );
-
+            <div class="entityGrid">
+                ${cards}
+            </div>
+        </section>
+    `;
 })
                     item.icon,
                     item.type
