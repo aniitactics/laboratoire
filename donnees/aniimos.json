@@ -24784,7 +24784,7 @@
           "control": "",
           "regen_ep": "",
           "upgrade": "No longer removes the [Fire Debuff] stacks of the target.",
-          "upgrade_fr": "Ne retire pus les stacks de [Malus Feu] sur la cible."
+          "upgrade_fr": "Ne retire plus les stacks de [Malus Feu] sur la cible."
         },
         {
           "version_id": "cb3",
@@ -24896,7 +24896,7 @@
               "control": "",
               "regen_ep": "",
               "upgrade": "No longer removes the [Fire Debuff] stacks of the target.",
-              "upgrade_fr": "Ne retire pus les stacks de [Malus Feu] sur la cible."
+              "upgrade_fr": "Ne retire plus les stacks de [Malus Feu] sur la cible."
             },
             {
               "version_id": "cb3",
